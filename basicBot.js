@@ -238,17 +238,17 @@
     var basicBot = {
         version: "2.8.17",
         status: false,
-        name: "basicBot",
+        name: "EnriqueOnAir",
         loggedInID: null,
         scriptLink: "https://rawgit.com/EnriqueOnAir/basicBot/master/basicBot.js",
-        cmdLink: "http://git.io/245Ppg",
+        cmdLink: "https://git.io/vonYi",
         chatLink: "https://rawgit.com/EnriqueOnAir/basicBot/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "MCloud_Bot",
             language: "english",
             chatLink: "https://rawgit.com/EnriqueOnAir/basicBot/master/lang/en.json",
             scriptLink: "https://rawgit.com/EnriqueOnAir/basicBot/master/basicBot.js",
@@ -271,7 +271,7 @@
             cycleGuard: true,
             maximumCycletime: 10,
             voteSkip: false,
-            voteSkipLimit: 10,
+            voteSkipLimit: 3,
             historySkip: false,
             timeGuard: true,
             maximumSongLength: 10,
@@ -282,13 +282,13 @@
             thorCooldown: 10,
             skipPosition: 3,
             skipReasons: [
-                ["theme", "This song does not fit the room theme. "],
-                ["op", "This song is on the OP list. "],
-                ["history", "This song is in the history. "],
-                ["mix", "You played a mix, which is against the rules. "],
-                ["sound", "The song you played had bad sound quality or no sound. "],
-                ["nsfw", "The song you contained was NSFW (image or sound). "],
-                ["unavailable", "The song you played was not available for some users. "]
+            ["theme", "Ši daina neatitinka kambario leidžiamos žanros. "],
+            ["op", "Ši daina yra OP sąraše. "],
+            ["history", "Ši daina buvo pastarųjų 50 dainų istorijoje. "],
+            ["mix", "Tu buvai paleidęs mix'ą, kuris pažeidžia taisykles. "],
+            ["sound", "Daina kuria buvote paleidę turėjo bloga garso kokybę arba išvis negrojo. "],
+            ["nsfw", "Daina buvo nesaugi darbui (vaizdas arba garsas). "],
+            ["unavailable", "Daina buvo nepasiekiama kai kuriems klausytojams. "]
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
@@ -2476,11 +2476,11 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/basicBot/source/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/EnriqueOnAir/OnAir/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
-                                API.sendChat(subChat(basicBot.chat.langerror, {link: "http://git.io/vJ9nI"}));
+                                API.sendChat(subChat(basicBot.chat.langerror, {link: "https://git.io/von3E"}));
                             }
                             else {
                                 basicBot.settings.language = argument;
